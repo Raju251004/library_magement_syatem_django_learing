@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookstore</title>
+
+    <link rel="stylesheet" href="{% static 'lib_app/style.css' %}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            📚 My Bookstore
+        </div>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#books">Books</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#books" class="cart-link">🛒 Cart</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="subtitle">WELCOME TO MY BOOKSTORE</p>
+
+            <h1>Discover Your Next<br>
+                Favourite Book
+            </h1>
+
+            <p>
+                Explore amazing books, learn new skills,
+                and find your next great read.
+            </p>
+
+            <a href="#books" class="shop-btn">
+                Explore Books
+            </a>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section class="books-section" id="books">
+
+        <div class="section-heading">
+            <p class="subtitle">OUR COLLECTION</p>
+            <h2>Popular Books</h2>
+            <p>Choose your favourite book and start learning!</p>
+        </div>
+
+        <div class="book-container">
+
+            <!-- Book 1 -->
+            <div class="book-card">
+                <img
+                    src="https://placehold.co/300x350/e8d8c4/4b2e2e?text=Python"
+                    alt="Python Programming Book">
+
+                <div class="book-info">
+                    <span class="category">PROGRAMMING</span>
+                    <h3>Python Programming</h3>
+                    <p>Learn Python from basics to advanced.</p>
+                    <div class="price">₹450</div>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Book 2 -->
+            <div class="book-card">
+                <img
+                    src="https://placehold.co/300x350/d8e4d0/304b35?text=Web+Development"
+                    alt="Web Development Book">
+
+                <div class="book-info">
+                    <span class="category">WEB DESIGN</span>
+                    <h3>Web Development</h3>
+                    <p>Learn HTML, CSS and web development.</p>
+                    <div class="price">₹550</div>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Book 3 -->
+            <div class="book-card">
+                <img
+                    src="https://placehold.co/300x350/d9d9ee/34345c?text=Data+Science"
+                    alt="Data Science Book">
+
+                <div class="book-info">
+                    <span class="category">DATA SCIENCE</span>
+                    <h3>Data Science</h3>
+                    <p>Explore data analysis and visualization.</p>
+                    <div class="price">₹600</div>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Book 4 -->
+            <div class="book-card">
+                <img
+                    src="https://placehold.co/300x350/f0d9dc/70333c?text=Django"
+                    alt="Django Book">
+
+                <div class="book-info">
+                    <span class="category">PYTHON</span>
+                    <h3>Django for Beginners</h3>
+                    <p>Build dynamic websites using Django.</p>
+                    <div class="price">₹499</div>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Book 5 -->
+            <div class="book-card">
+                <img
+                    src="https://placehold.co/300x350/d5e5ee/24445a?text=SQL"
+                    alt="SQL Database Book">
+
+                <div class="book-info">
+                    <span class="category">DATABASE</span>
+                    <h3>SQL Made Easy</h3>
+                    <p>Understand databases and SQL queries.</p>
+                    <div class="price">₹399</div>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+
+            <form action="/" method="get">
+                <input 
+                type="text" 
+                name="search"
+                placeholder='search your book here'
+                value="{{search_query}}">
+
+                <select name="category" id="#">
+                    <option value="">all categories</option>
+
+                    {% for cat in categories %}  
+
+                    <option value="{{ cat }}"
+                    {% if selected_category == cat %} selected{% endif %}>{{ cat }}
+                </option>
+
+                {% endfor %}
+                </select>
+
+
+                <button type="submit">search</button>
+                <a>clear</a>
+
+            </form>
+
+            <!-- Book 6 -->
+            <div class="book-card">
+                <img
+                    src="https://placehold.co/300x350/eadfca/624b2d?text=Machine+Learning"
+                    alt="Machine Learning Book">
+
+                <div class="book-info">
+                    <span class="category">TECHNOLOGY</span>
+                    <h3>Machine Learning</h3>
+                    <p>Discover machine learning concepts.</p>
+                    <div class="price">₹699</div>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div>
+            <p class="subtitle">ABOUT US</p>
+            <h2>A Book for Every Curious Mind</h2>
+            <p>
+                My Bookstore helps readers discover books
+                about programming, technology and creativity.
+                Start your learning journey with us.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions about our books?</p>
+        <p>Email: hello@mybookstore.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 My Bookstore. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>  

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title }}</title>
+    <link rel="stylesheet" href="{% static 'lib_app/style.css' %}">
+</head>
+<body class="detail-page-body">
+    <main class="book-detail-page">
+        <article class="book-detail-card">
+            <div class="book-detail-visual">
+                {% if book.image %}
+                    <img src="{{ book.image.url }}" alt="{{ book.title }}" class="book-cover">
+                {% else %}
+                    <div class="book-cover placeholder-cover">
+                        <span>{{ book.title }}</span>
+                    </div>
+                {% endif %} 
+            </div>
+
+            <div class="book-detail-content">
+                <span class="book-badge">{{ book.category }}</span>
+                <h1>{{ book.title }}</h1>
+                <p class="book-description">{{ book.description }}</p>
+
+                <div class="book-meta">
+                    <span class="book-price">₹{{ book.price }}</span>
+                    <button type="button" class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
