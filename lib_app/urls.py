@@ -10,4 +10,6 @@ urlpatterns = [
             'book/<int:book_id>/',
             views.book_detail,name='book_detail'
         ),
+        path('test/', views.test, name='test'),
+
 ]

@@ -89,3 +89,20 @@ python manage.py createsuperuser
 ```
 
 Follow the prompts, then sign in at <http://127.0.0.1:8000/admin/>.
+
+# push commmends 
+
+# !-- Checks which files you changed. -->
+git status
+
+
+# !-- — Stages all changes. -->
+git add .
+
+
+# !-- "Update project changes" — Saves the changes in a commit. -->
+git commit -m
+
+
+# !--  Uploads your commit to GitHub. -->
+git push origin main
